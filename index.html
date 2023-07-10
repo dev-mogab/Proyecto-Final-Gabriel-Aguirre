@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <!-- Iconos-->
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Pixel Paradise | Games</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__div">
+        <div class="header__logo">
+          <!-- <img src="#" alt="#" class="header__img"> -->
+          <h1 class="logo">PIXEL PARADISE</h1>
+        </div>
+        <div class="header__user">
+          <a href="#" class="header__login">LOG IN</a>
+          <a id="cartBtn" data-bs-toggle="modal" data-bs-target="#idModalCarrito" class="btn btn-secondary"><i class="fas fa-shopping-cart fa-1x"></i></a>
+        </div>
+       </div>
+       <hr>
+      <nav class="header__nav">
+        <ul class="header__ul">
+          <li class="header__li"><a class="header__link" href="#">Home</a></li>
+          <li class="header__li"><a class="header__link" href="./index.html">Games</a></li>
+          <li class="header__li"><a class="header__link" href="#">Consoles</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1>Games</h1>
+      <div class="inputs">
+        <div>
+          <label for="search">Search</label>
+          <input type="search" name="search" id="search" 
+        class="search">
+        </div>
+        <select class="select" id="select1">
+          <option selected disabled>Filter</option>
+          <option value="1">Price: High - Low</option>
+          <option value="2">Price: Low - High</option>
+          <option value="3">Title: A - Z</option>
+          <option value="4">Title: Z - A</option>
+        </select>
+      </div>
+      <div class="games" id="games"></div>
+      <div id="found"></div>
+        <!--Cart-->
+      <div class="modal fade" id="idModalCarrito" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Shopping Cart</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="modal-body-cart">
+            </div>
+            <div class="row ml-ato">
+              <p id="totalPrice"></p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" data-bs-dismiss="modal" class="btn btn-success" id="btnPurchase">Purchase</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="footer__container">
+        <div class="container__logo">
+<!--           <img src="#" alt="#" class="logo__img" /> -->
+          <h3>PIXEL PARADISE</h3>
+          <p class="logo__text">Bla Bla Bla Bla</p>
+        </div>
+        <div class="container__links">
+          <h3 class="links__title">Useful links</h3>
+          <ul class="links__list">
+            <li><a href="#" class="list__link">About us</a></li>
+            <li><a href="#" class="list__link">How to shop</a></li>
+            <li><a href="#" class="list__link">FAQ</a></li>
+            <li><a href="#" class="list__link">Contact us</a></li>
+            <li><a href="#" class="list__link">Log in</a></li>
+          </ul>
+        </div>
+        <div class="container__links">
+          <h3 class="links__title">Customer Service</h3>
+          <ul class="links__list">
+            <li><a href="#" class="list__link">Payment methods</a></li>
+            <li><a href="#" class="list__link">Returns</a></li>
+            <li><a href="#" class="list__link">Shipping</a></li>
+            <li><a href="#" class="list__link">Terms and conditions</a></li>
+            <li><a href="#" class="list__link">Privacy policy</a></li>
+          </ul>
+        </div>
+        <div class="container__links">
+          <h3 class="links__title">My Account</h3>
+          <ul class="links__list">
+            <li><a href="#" class="list__link">Sign in</a></li>
+            <li><a href="./pages/cart.html" class="list__link">View cart</a></li>
+            <li><a href="#" class="list__link">Track my order</a></li>
+            <li><a href="#" class="list__link">Help</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__copy">
+        <div>
+          <p>&copy; DevMogab | Created as a school project</p>
+        </div>
+        <div>
+          <img src="./assets/payments.png" alt="Payment methods" />
+        </div>
+      </div>
+    </footer>
+    <!--Script de Bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+    </script>
+    <!-- Script Sweet Alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>

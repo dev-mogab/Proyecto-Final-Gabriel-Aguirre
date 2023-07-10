@@ -1,0 +1,132 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header{
+  &__div{
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0;
+  }
+  &__logo{
+    display: flex
+  }
+  &__user{
+    display: inline-block;
+    margin: auto 0;
+  }
+  &__cart, &__login{
+    text-decoration: none;
+    color: black;
+    margin-right: 1rem;
+  }
+  &__ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    list-style-type: none;
+    margin: 1rem 0;
+  }
+  &__link{
+    color: black;
+    display: inline-block;
+    text-decoration: none;
+  }
+}
+
+.footer{
+  margin: 2rem 0;
+  &__container{
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    .container__links{
+      .links__list{
+        list-style-type: none;
+        .list__link{
+          text-decoration: none;
+          color: black;
+          display: inline-block;
+          margin-top: .5rem;
+        }
+      }
+    }
+  }
+  .footer__copy{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+  }
+}
+
+.button{
+  background-color: #7066e0;
+  border: none;
+  border-radius: .5rem;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all .3s;
+  &:hover{
+    transform: scale(1.1);
+  }
+}
+
+.games{
+  margin: 5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 5rem;
+}
+
+.card-body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-text, .btn-primary{
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.card-text{
+  font-size: 1.2rem;
+}
+
+.card-text:last-of-type{
+  font-size: 2rem;
+}
+
+.inputs{
+  display: flex;
+  justify-content: space-between;
+}
+
+.select, .search {
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.not-found{
+  display: block;
+  margin: 0 auto;
+}
