@@ -19,26 +19,26 @@ class Game{
 
 //Creo los objetos
 //Nintendo 64 Games
-const game1 = new Game(1, 'The Legend of Zelda: Ocarina of Time', 119, '/assets/games/game1.jpg');
-const game2 = new Game(2, "The Legend of Zelda: Majora's Mask", 170, '/assets/games/game2.jpg');
-const game3 = new Game(3, 'Super Mario 64', 119, '/assets/games/game3.jpg');
-const game4 = new Game(4, 'Banjoo Kazooie', 102, '/assets/games/game4.png');
-const game5 = new Game(5, 'Donkey Kong 64', 94, '/assets/games/game5.png');
-const game6 = new Game(6, 'Goldeneye 007', 90, '/assets/games/game6.jpg');
+const game1 = new Game(1, 'The Legend of Zelda: Ocarina of Time', 119, './assets/games/game1.jpg');
+const game2 = new Game(2, "The Legend of Zelda: Majora's Mask", 170, './assets/games/game2.jpg');
+const game3 = new Game(3, 'Super Mario 64', 119, './assets/games/game3.jpg');
+const game4 = new Game(4, 'Banjoo Kazooie', 102, './assets/games/game4.png');
+const game5 = new Game(5, 'Donkey Kong 64', 94, './assets/games/game5.png');
+const game6 = new Game(6, 'Goldeneye 007', 90, './assets/games/game6.jpg');
 //Playstation 1 Games
-const game7 = new Game(7, 'Silent Hill', 179, '/assets/games/game7.png');
-const game8 = new Game(8, 'Metal Gear Solid', 49, '/assets/games/game8.png');
-const game9 = new Game(9, 'Resident Evil', 100, '/assets/games/game9.jpg');
-const game10 = new Game(10, 'Final Fantasy VII', 34, '/assets/games/game10.jpg');
-const game11 = new Game(11, 'Parasite Eve 1', 65, '/assets/games/game11.png');
-const game12 = new Game(12, 'Parasite Eve 2', 103, '/assets/games/game12.jpg');
+const game7 = new Game(7, 'Silent Hill', 179, './assets/games/game7.png');
+const game8 = new Game(8, 'Metal Gear Solid', 49, './assets/games/game8.png');
+const game9 = new Game(9, 'Resident Evil', 100, './assets/games/game9.jpg');
+const game10 = new Game(10, 'Final Fantasy VII', 34, './assets/games/game10.jpg');
+const game11 = new Game(11, 'Parasite Eve 1', 65, './assets/games/game11.png');
+const game12 = new Game(12, 'Parasite Eve 2', 103, './assets/games/game12.jpg');
 //Handled Games
-const game13 = new Game(13, 'The Legend of Zelda: A Link to the Past', 89, '/assets/games/game13.png');
-const game14 = new Game(14, 'Super Mario Bros. 3', 59, '/assets/games/game14.png');
-const game15 = new Game(15, 'Metroid Fusion', 149, '/assets/games/game15.png');
-const game16 = new Game(16, 'Pokemon Ruby', 247, '/assets/games/game16.png');
-const game17 = new Game(17, 'Pokemon Emerald', 464, '/assets/games/game17.jpg');
-const game18 = new Game(18, 'Mega Man Zero', 95, '/assets/games/game18.jpg');
+const game13 = new Game(13, 'The Legend of Zelda: A Link to the Past', 89, './assets/games/game13.png');
+const game14 = new Game(14, 'Super Mario Bros. 3', 59, './assets/games/game14.png');
+const game15 = new Game(15, 'Metroid Fusion', 149, './assets/games/game15.png');
+const game16 = new Game(16, 'Pokemon Ruby', 247, './assets/games/game16.png');
+const game17 = new Game(17, 'Pokemon Emerald', 464, './assets/games/game17.jpg');
+const game18 = new Game(18, 'Mega Man Zero', 95, './assets/games/game18.jpg');
 
 //Creo los arrays de games y los productos en el carrito
 let games = []
