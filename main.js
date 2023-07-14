@@ -246,10 +246,12 @@ findd.addEventListener('input', () => {
   searching(findd.value, games)
 })
 
+//Evento que permite cancelar o realizar la compra al hacer click
 purchaseBtn.addEventListener('click', () => {
   purchase(cartProducts)
 })
 
+//Simulador de carga de objetos en el DOM
 setTimeout(()=>{
   loaderTxt.remove()
   loader.remove()
