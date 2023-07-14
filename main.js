@@ -6,6 +6,13 @@ let coincidence = document.getElementById('found')
 let cartModal = document.getElementById('modal-body-cart')
 let modalBtn = document.getElementById('cartBtn')
 let totalPrice = document.getElementById('totalPrice')
+let purchaseBtn = document.getElementById('btnPurchase')
+let loader = document.getElementById("loader")
+let loaderTxt = document.getElementById("loaderTxt")
+
+//Creo los arrays de games y los productos en el carrito
+let games = []
+let cartProducts 
 
 //Creo la clase constructora
 class Game{
@@ -17,39 +24,22 @@ class Game{
   }
 }
 
-//Creo los objetos
-//Nintendo 64 Games
-const game1 = new Game(1, 'The Legend of Zelda: Ocarina of Time', 119, './assets/games/game1.jpg');
-const game2 = new Game(2, "The Legend of Zelda: Majora's Mask", 170, './assets/games/game2.jpg');
-const game3 = new Game(3, 'Super Mario 64', 119, './assets/games/game3.jpg');
-const game4 = new Game(4, 'Banjoo Kazooie', 102, './assets/games/game4.png');
-const game5 = new Game(5, 'Donkey Kong 64', 94, './assets/games/game5.png');
-const game6 = new Game(6, 'Goldeneye 007', 90, './assets/games/game6.jpg');
-//Playstation 1 Games
-const game7 = new Game(7, 'Silent Hill', 179, './assets/games/game7.png');
-const game8 = new Game(8, 'Metal Gear Solid', 49, './assets/games/game8.png');
-const game9 = new Game(9, 'Resident Evil', 100, './assets/games/game9.jpg');
-const game10 = new Game(10, 'Final Fantasy VII', 34, './assets/games/game10.jpg');
-const game11 = new Game(11, 'Parasite Eve 1', 65, './assets/games/game11.png');
-const game12 = new Game(12, 'Parasite Eve 2', 103, './assets/games/game12.jpg');
-//Handled Games
-const game13 = new Game(13, 'The Legend of Zelda: A Link to the Past', 89, './assets/games/game13.png');
-const game14 = new Game(14, 'Super Mario Bros. 3', 59, './assets/games/game14.png');
-const game15 = new Game(15, 'Metroid Fusion', 149, './assets/games/game15.png');
-const game16 = new Game(16, 'Pokemon Ruby', 247, './assets/games/game16.png');
-const game17 = new Game(17, 'Pokemon Emerald', 464, './assets/games/game17.jpg');
-const game18 = new Game(18, 'Mega Man Zero', 95, './assets/games/game18.jpg');
-
-//Creo los arrays de games y los productos en el carrito
-let games = []
-let cartProducts 
+//Traigo los datos de games.json
+const loadGames = async() => {
+  const res = await fetch('./games.json')
+  const data = await res.json()
+  data.forEach(game => {
+    let newGame = new Game(game.id, game.name, game.price, game.image)
+    games.push(newGame)
+  })
+  localStorage.setItem('games', JSON.stringify(games))
+}
 
 //Agrego el array de games al localStorage
 if(localStorage.getItem('games')){
   games = JSON.parse(localStorage.getItem('games'))
 }else{
-  games.push(game1,game2,game3,game4,game5,game6,game7,game8,game9,game10,game11,game12,game13,game14,game15,game16,game17,game18)
-  localStorage.setItem('games', JSON.stringify(games))
+  loadGames()
 }
 
 //Agrego el array de cartProducts al localStorage
@@ -60,7 +50,7 @@ if(localStorage.getItem('cart')){
   localStorage.setItem('cart', cartProducts)
 }
 
-//Muestro por defecto los objetos en el DOM
+//Funcion que muestra los objetos en el DOM
 function showDOM(array){
   gamesDOM.innerHTML = ``
   for(let game of array ){
@@ -81,7 +71,6 @@ function showDOM(array){
      })
   }
 }
-showDOM(games)
 
 //Funcion que agrega los juegos al carrito
 function addCart(game){
@@ -140,6 +129,39 @@ function addCartModal(array){
 function calcTotal(array){
   let total = array.reduce((acc, cartProduct) => acc + cartProduct.price, 0)
   total === 0 ? totalPrice.innerHTML= 'Empty Cart' : totalPrice.innerHTML = `Total price: $${total}`
+  return total
+}
+
+//Funcion que permite confirmar o cancelar la compra
+function purchase(array){
+    Swal.fire({
+      title: 'Confirm Purchase',
+      icon: 'warning',
+      showCancelButton: true,
+      cancelButtonText: 'Cancel',
+      cancelButtonColor: 'red',
+      confirmButtonText: 'Confirm',
+      confirmButtonColor: 'green'
+    }).then((res) => {
+      if (res.isConfirmed) {
+        let totalPrice = calcTotal(array)
+        Swal.fire({
+          title: 'Purchase Confirmed',
+          text: `The total is: $${totalPrice}`,
+          icon: 'success',
+          showConfirmButton: true
+        })
+        cartProducts = []
+        localStorage.removeItem('cart')
+      }else{
+        Swal.fire({
+          title: 'Purchase Cancelled',
+          icon: 'error',
+          showConfirmButton: false,
+          timer: 1500
+        })
+      }
+    })
 }
 
 //Funcion que permite la busqueda de un juego, en caso de no encontrar muestra una imagen 404
@@ -215,7 +237,7 @@ select.addEventListener("change", () => {
 // <---
 
 //Evento que permite mostrar el carrito al hacer click en el
-modalBtn.addEventListener('click', ()=>{
+modalBtn.addEventListener('click', () =>{
   addCartModal(cartProducts)
 })
 
@@ -223,3 +245,13 @@ modalBtn.addEventListener('click', ()=>{
 findd.addEventListener('input', () => {
   searching(findd.value, games)
 })
+
+purchaseBtn.addEventListener('click', () => {
+  purchase(cartProducts)
+})
+
+setTimeout(()=>{
+  loaderTxt.remove()
+  loader.remove()
+  showDOM(games)
+},1000)

@@ -1,0 +1,111 @@
+[
+  {
+      "id": 1,
+      "name": "The Legend of Zelda: Ocarina of Time",
+      "price": 119,
+      "image": "./assets/games/game1.jpg"
+  },
+  {
+      "id": 2,
+      "name": "The Legend of Zelda: Majora's Mask",
+      "price": 170,
+      "image": "./assets/games/game2.jpg"
+  },
+  {
+      
+      "id": 3,
+      "name": "Super Mario 64",
+      "price": 119,
+      "image": "./assets/games/game3.jpg"
+  },
+  {
+      "id": 4,
+      "name": "Banjoo Kazooie",
+      "price": 102,
+      "image": "./assets/games/game4.png"
+  },
+  {
+      "id": 5,
+      "name": "Donkey Kong 64",
+      "price": 94,
+      "image": "./assets/games/game5.png"
+  },
+  {
+      "id": 6,
+      "name": "Goldeneye 007",
+      "price": 90,
+      "image": "./assets/games/game6.jpg"
+  },
+  {
+      "id": 7,
+      "name": "Silent Hill",
+      "price": 179,
+      "image": "./assets/games/game7.png"
+  },
+  {
+      "id": 8,
+      "name": "Metal Gear Solid",
+      "price": 49,
+      "image": "./assets/games/game8.png"
+  },
+  {
+      "id": 9,
+      "name": "Resident Evil",
+      "price": 100,
+      "image": "./assets/games/game9.jpg"
+  },
+  {
+      "id": 10,
+      "name": "Final Fantasy VII",
+      "price": 34,
+      "image": "./assets/games/game10.jpg"
+  },
+  {
+      "id": 11,
+      "name": "Parasite Eve 1",
+      "price": 65,
+      "image": "./assets/games/game11.png"
+  },
+  {
+      "id": 12,
+      "name": "Parasite Eve 2",
+      "price": 103,
+      "image": "./assets/games/game12.jpg"
+  },
+  {
+      "id": 13,
+      "name": "The Legend of Zelda: A Link to the Past",
+      "price": 89,
+      "image": "./assets/games/game13.png"
+  },
+  {
+      "id": 14,
+      "name": "Super Mario Bros. 3",
+      "price": 59,
+      "image": "./assets/games/game14.png"
+  },
+  {
+      "id": 15,
+      "name": "Metroid Fusion",
+      "price": 149,
+      "image": "./assets/games/game15.png"
+  },
+  {
+      "id": 16,
+      "name": "Pokemon Ruby",
+      "price": 247,
+      "image": "./assets/games/game16.png"
+  },
+  {
+      "id": 17,
+      "name": "Pokemon Emerald",
+      "price": 464,
+      "image": "./assets/games/game17.jpg"
+  },
+  {
+      "id": 18,
+      "name": "Mega Man Zero",
+      "price": 95,
+      "image": "./assets/games/game18.jpg"
+  }
+]
