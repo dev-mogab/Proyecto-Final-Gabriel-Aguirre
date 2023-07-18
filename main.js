@@ -128,7 +128,7 @@ function addCartModal(array){
 //Funcion que calcula el total de la compra
 function calcTotal(array){
   let total = array.reduce((acc, cartProduct) => acc + cartProduct.price, 0)
-  total === 0 ? totalPrice.innerHTML= 'Empty Cart' : totalPrice.innerHTML = `Total price: $${total}`
+  total === 0 ? totalPrice.innerHTML= '' : totalPrice.innerHTML = `Total price: $${total}`
   return total
 }
 
