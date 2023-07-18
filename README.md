@@ -1,4 +1,4 @@
-# Proyecto Final Gabriel Aguirre 
+# Proyecto Final JavaScript Coderhouse Gabriel Aguirre 
 ## About
 Ecommerce de juegos retro que permite:
 - Buscar por titulo, en caso de encontrar coincidencia lo muestra en el DOM, en caso de no encontrar aparece una imagen de error 404.
